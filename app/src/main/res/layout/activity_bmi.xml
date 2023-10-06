@@ -2,16 +2,37 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    style="@style/screenBackground"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".BMIActivity">
+    tools:context=".activities.BMIActivity">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/toolbar_bmi_activity"
         android:layout_width="match_parent"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="#FFFFFF" />
+        android:requiresFadingEdge="vertical"
+        android:background="@color/teal_700"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
 
+        <ImageButton
+            android:id="@+id/goBack"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="2sp"
+            android:background="@color/teal_700"
+            android:src="@drawable/ic_back_24" />
+
+        <TextView
+            android:id="@+id/toolbarText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:text="Calculate BMI"
+            android:textSize="20sp" />
+
+    </androidx.appcompat.widget.Toolbar>
 
     <!--positioned below toolbar-->
     <!--TODO(Step 1 : Adding radio selection for METRIC and US Units.)-->
@@ -171,7 +192,6 @@
             android:textSize="16sp" />
     </com.google.android.material.textfield.TextInputLayout>
     <!--end-->
-
 
     <!--positioned below tilMetricUnitHeight-->
     <LinearLayout

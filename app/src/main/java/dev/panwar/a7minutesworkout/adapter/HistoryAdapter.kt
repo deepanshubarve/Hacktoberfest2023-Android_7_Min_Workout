@@ -1,11 +1,10 @@
-package dev.panwar.a7minutesworkout
+package dev.panwar.a7minutesworkout.adapter
 
 import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import dev.panwar.a7minutesworkout.databinding.ItemHistoryRowBinding
-
 
 // TODO(Step 2 : Created a adapter class to bind the to RecyclerView to show the list of completed dates in History Screen.)
 // START
@@ -21,7 +20,8 @@ class HistoryAdapter(private val items: ArrayList<String>) :
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             ItemHistoryRowBinding.inflate(
-            LayoutInflater.from(parent.context),parent,false)
+                LayoutInflater.from(parent.context), parent, false
+            )
         )
     }
 
@@ -37,7 +37,7 @@ class HistoryAdapter(private val items: ArrayList<String>) :
      */
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
 
-        val date: String = items.get(position)
+        val date: String = items[position]
 
         holder.tvPosition.text = (position + 1).toString()
         holder.tvItem.text = date

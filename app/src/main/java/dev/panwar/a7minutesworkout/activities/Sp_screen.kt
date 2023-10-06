@@ -1,10 +1,11 @@
-package dev.panwar.a7minutesworkout
+package dev.panwar.a7minutesworkout.activities
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.widget.ImageView
+import dev.panwar.a7minutesworkout.R
 
 
 class sp_screen : AppCompatActivity() {
@@ -29,4 +30,3 @@ class sp_screen : AppCompatActivity() {
 
         }
     }
-

@@ -11,10 +11,29 @@
         <item name="colorOnSecondary">@color/black</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/black</item>
+        <item name="android:textColor">@color/black</item>
         <!-- Customize your theme here. -->
     </style>
-<!--Style for Our ToolBar-->
-    <style name="toolbarTheme" parent="@style/ThemeOverlay.MaterialComponents.ActionBar">
-        <item name="colorControlNormal" >@color/toolbar_color_control_normal</item>
+    <!--Style for Our ToolBar-->
+    <style name="toolbarTheme" parent="@style/ThemeOverlay.AppCompat.DayNight">
+        <item name="colorControlNormal">@color/toolbar_color_control_normal</item>
     </style>
+
+    <!-- dark application theme. -->
+    <style name="darkTheme" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">#000</item>
+        <item name="colorPrimaryDark">#000</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="backgroundColor">#131313</item>
+        <!--     Our app's background changes to black when dark mode is activated -->
+        <item name="textFillColor">#ffff</item>
+        <!--     text and button color change to white to contrast with the app's background-->
+        <item name="buttonTint">#ffff</item>
+        <item name="android:textColor">@color/white</item>
+    </style>
+
+    <style name="cardBackground"><item name="android:background">@color/white</item></style>
+    <style name="screenBackground"><item name="android:background">@color/white</item></style>
+    <style name="textColor"><item name="android:background">@color/lavender</item></style>
 </resources>
