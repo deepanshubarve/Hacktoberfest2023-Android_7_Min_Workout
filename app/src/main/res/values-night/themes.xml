@@ -14,7 +14,7 @@
         <!-- Customize your theme here. -->
     </style>
 
-    <style name="cardBackground"><item name="android:background">@color/black</item></style>
+    <style name="dialogBackground"><item name="android:background">@color/lightGrey</item></style>
     <style name="screenBackground"><item name="android:background">@color/gray</item></style>
     <style name="textColor"><item name="android:background">@color/black</item></style>
 

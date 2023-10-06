@@ -122,9 +122,11 @@
 
     <androidx.appcompat.widget.SwitchCompat
         android:id="@+id/themeSwitch"
-        android:layout_width="40dp"
+        android:layout_width="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
+        android:thumb="@drawable/thumb"
+        app:track="@drawable/track"
         android:layout_margin="10dp"
         android:layout_height="wrap_content"/>
 

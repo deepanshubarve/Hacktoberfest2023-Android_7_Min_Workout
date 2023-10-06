@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    style="@style/screenBackground"
     tools:context=".activities.ExerciseActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -12,9 +13,26 @@
         android:layout_width="match_parent"
         android:theme="@style/toolbarTheme"
         android:layout_height="?android:attr/actionBarSize"
-        android:background="@color/white"
-        android:titleTextColor="@color/colorPrimary"
-        >
+        android:background="@color/teal_700"
+        android:requiresFadingEdge="vertical"
+        app:contentInsetLeft="0dp"
+        app:contentInsetStart="0dp">
+
+        <ImageButton
+            android:id="@+id/goBack"
+            android:layout_width="?attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_marginStart="2sp"
+            android:background="@color/teal_700"
+            android:src="@drawable/ic_back_24" />
+
+        <TextView
+            android:id="@+id/toolbarText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20sp"
+            android:text="Start Exercise"
+            android:textSize="20sp" />
 
     </androidx.appcompat.widget.Toolbar>
 

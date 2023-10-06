@@ -21,18 +21,9 @@ class HistoryActivity : AppCompatActivity() {
         // bind the layout to this activity
         setContentView(binding.root)
 
-//Setting up the action bar in the History Screen Activity and
-// adding a back arrow button and click event for it.)
-        //setSupportActionBar(binding.toolbarHistoryActivity)
         supportActionBar?.hide()
 
-        val actionbar = supportActionBar//actionbar
-        if (actionbar != null) {
-            actionbar.setDisplayHomeAsUpEnabled(true) //set back button
-            actionbar.title = "HISTORY" // Setting a title in the action bar.
-        }
-
-        binding.toolbarHistoryActivity.setOnClickListener {
+        binding.goBack.setOnClickListener {
             finish()
         }
 

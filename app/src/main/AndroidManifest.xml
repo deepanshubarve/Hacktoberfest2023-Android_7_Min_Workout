@@ -19,7 +19,7 @@
         android:theme="@style/Theme.7MinutesWorkout"
         tools:targetApi="31">
         <activity
-            android:name=".activities.sp_screen"
+            android:name=".activities.SplashScreen"
             android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
             android:exported="true">
             <intent-filter>

@@ -21,20 +21,9 @@ class FinishActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityFinishBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        setSupportActionBar(binding.toolbarFinishActivity)
 
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.darkTheme) //when dark mode is enabled, we use the dark theme
-        } else {
-            setTheme(R.style.Theme_7MinutesWorkout)  //default app theme
-        }
+        supportActionBar?.hide()
 
-        if (supportActionBar != null) {
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        }
-        binding.toolbarFinishActivity.setNavigationOnClickListener {
-            onBackPressed()
-        }
         binding.btnFinish.setOnClickListener {
             finish()
         }

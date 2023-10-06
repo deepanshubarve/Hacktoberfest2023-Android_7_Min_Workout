@@ -54,22 +54,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         binding = ActivityExerciseBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        if (AppCompatDelegate.getDefaultNightMode() == AppCompatDelegate.MODE_NIGHT_YES) {
-            setTheme(R.style.darkTheme) //when dark mode is enabled, we use the dark theme
-        } else {
-            setTheme(R.style.Theme_7MinutesWorkout)  //default app theme
-        }
-
-        //for supporting toolbar
-        setSupportActionBar(binding.toolbarExercise)
-
-        //for showing back button on toolbar
-        if (supportActionBar != null) {
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        }
-
 //        for working of back button pressed...when back button is pressed
-        binding.toolbarExercise.setNavigationOnClickListener {
+        binding.goBack.setOnClickListener {
             customDialogForBackButton()
         }
 
