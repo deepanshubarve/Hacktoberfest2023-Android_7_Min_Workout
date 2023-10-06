@@ -12,7 +12,6 @@ class ExerciseStatusAdapter(val Exercises:ArrayList<ExerciseModel>) : RecyclerVi
 //   view binding recycler view
     class ViewHolder(binding: ItemExerciseStatusBinding): RecyclerView.ViewHolder(binding.root){
         val tvItem=binding.tvItem
-
     }
 //for creating view HOLDER
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

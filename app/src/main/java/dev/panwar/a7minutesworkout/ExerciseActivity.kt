@@ -1,5 +1,6 @@
 package dev.panwar.a7minutesworkout
 
+import android.annotation.SuppressLint
 import android.app.Dialog
 import android.content.Intent
 import android.media.MediaPlayer
@@ -24,7 +25,6 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
     private var restProgress=0 //how much second rest completed
 
     private var restTimerDuration:Long=1
-    private var exerciseTimerDuration:Long=1
 
     private var exerciseTimer: CountDownTimer?=null
     private var exerciseProgress=0
@@ -38,6 +38,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 //    for play sound after every exercise
     private var player:MediaPlayer?=null
 
+   //for play sound when exercise is start
+    private var countdownPlayer: MediaPlayer? = null
     // Declaring an exerciseAdapter object which will be initialized later.
     private var exerciseAdapter: ExerciseStatusAdapter? = null
 
@@ -46,6 +48,10 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         super.onCreate(savedInstanceState)
         binding = ActivityExerciseBinding.inflate(layoutInflater)
         setContentView(binding?.root)
+
+        exerciseList=Constants.defaultExerciseList()
+        setupExerciseStatusRecyclerView()
+        setupRestView()
 //        setContentView(R.layout.activity_exercise)
 //for supporting toolbar
         setSupportActionBar(binding?.toolbarExercise)
@@ -108,16 +114,18 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 //            these both functions are inbuilt of CountDownTimer class whose object we have created
             override fun onTick(p0: Long) {
                 restProgress++
-                binding?.progressBar?.progress=10-restProgress
-                binding?.tvTimer?.text=(10-restProgress).toString()
+                binding?.progressBar?.progress = 10 - restProgress
+                binding?.tvTimer?.text = (10 - restProgress).toString()
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             override fun onFinish() {
                 currentExercisePosition++
                  // setting that next exercise is selected
                 exerciseList!![currentExercisePosition].setIsSelected(true)
 //                we are saying the Adapter that some data has been changed/updated so update the view....it will run all 3 methods of Exercise status updater class once again
                 exerciseAdapter!!.notifyDataSetChanged()
+
 
                setupExerciseView()
             }
@@ -135,6 +143,18 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
             player = MediaPlayer.create(applicationContext, soundURI)
             player?.isLooping = false // Sets the player to be looping or non-looping.
             player?.start() // Starts Playback.
+
+            if (restTimer != null) {
+                restTimer?.cancel()
+                restProgress = 0
+            }
+            binding?.tvNextExercise?.text = exerciseList!![currentExercisePosition + 1].getName()
+
+            // Set a 10-second rest interval
+            restTimerDuration = 10
+
+            // Start the rest timer
+            setRestProgressBar()
         } catch (e: Exception) {
             e.printStackTrace()
         }
@@ -154,6 +174,8 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
         }
         binding?.tvNextExercise?.text=exerciseList!![currentExercisePosition+1].getName()
 
+
+        exerciseProgress = 0
         setRestProgressBar()
 
     }
@@ -207,37 +229,48 @@ class ExerciseActivity : AppCompatActivity(), TextToSpeech.OnInitListener {
 
 // function for timer of Exercise
     private fun setExerciseProgressBar(){
+
+        exerciseProgress = 0
         //at start progress of Progressbar
         binding?.progressBarExercise?.progress=exerciseProgress
-        exerciseTimer=object :CountDownTimer(exerciseTimerDuration*1000,1000) {
+        exerciseTimer=object :CountDownTimer(30000,1000) {
             //total 10sec at 1 sec interval
 //            at every second what to do
 //            these both functions are inbuilt of CountDownTimer class whose object we have created
             override fun onTick(p0: Long) {
                 exerciseProgress++
-                binding?.progressBarExercise?.progress=30-exerciseProgress
-                binding?.tvTimerExercise?.text=(30-exerciseProgress).toString()
+                binding?.progressBarExercise?.progress = 30 - exerciseProgress
+                binding?.tvTimerExercise?.text = (30 - exerciseProgress).toString()
 
             }
 
+            @SuppressLint("NotifyDataSetChanged")
             override fun onFinish() {
+                // Mark the current exercise as completed
+                exerciseList!![currentExercisePosition].setIsSelected(false)
+                exerciseList!![currentExercisePosition].setIsCompleted(true)
+                exerciseAdapter!!.notifyDataSetChanged()
 
-
-
-//                if all exercises not completed
-                if(currentExercisePosition<exerciseList?.size!!-1){
-                    exerciseList!![currentExercisePosition].setIsSelected(false)
-                    exerciseList!![currentExercisePosition].setIsCompleted(true)
-//                we are saying the Adapter that some data has been changed/updated so update the view....it will run all 3 methods of Exercise status updater class once again
-                    exerciseAdapter!!.notifyDataSetChanged()
-                    setupRestView()
+                // Find the next uncompleted exercise
+                var nextExercisePosition = currentExercisePosition + 1
+                while (nextExercisePosition < exerciseList?.size!! &&
+                    exerciseList!![nextExercisePosition].getIsCompleted()
+                ) {
+                    nextExercisePosition++
                 }
-                else{
-//                    closes the current activity i.e. exercise activity...finish function closes current activity and moves to prev open activity....but here we are moving to finish activity by using intent
+
+                // Check if there are more exercises
+                if (currentExercisePosition < exerciseList?.size!! - 1) {
+                    exerciseList!![nextExercisePosition].setIsSelected(true)
+                    exerciseAdapter?.notifyItemChanged(nextExercisePosition)
+                    setupRestView() // Switch to the rest view after exercise
+                } else {
+                    // All exercises completed, finish the activity or perform any desired action
                     finish()
-                    val intent=Intent(this@ExerciseActivity,FinishActivity::class.java)
+                    val intent = Intent(this@ExerciseActivity, FinishActivity::class.java)
                     startActivity(intent)
                 }
+
             }
 
         }.start()
