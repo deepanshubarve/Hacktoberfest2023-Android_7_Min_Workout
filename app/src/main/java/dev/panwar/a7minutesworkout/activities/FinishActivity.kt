@@ -1,29 +1,30 @@
-package dev.panwar.a7minutesworkout
+package dev.panwar.a7minutesworkout.activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.lifecycle.lifecycleScope
+import dev.panwar.a7minutesworkout.R
+import dev.panwar.a7minutesworkout.data.HistoryDao
+import dev.panwar.a7minutesworkout.data.HistoryEntity
+import dev.panwar.a7minutesworkout.application.WorkOutApp
 import dev.panwar.a7minutesworkout.databinding.ActivityFinishBinding
 import kotlinx.coroutines.launch
 import java.text.SimpleDateFormat
 import java.util.*
 
 class FinishActivity : AppCompatActivity() {
-    private var binding: ActivityFinishBinding? = null
+    private lateinit var binding: ActivityFinishBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityFinishBinding.inflate(layoutInflater)
-        setContentView(binding?.root)
-        setSupportActionBar(binding?.toolbarFinishActivity)
-        if (supportActionBar != null) {
-            supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        }
-        binding?.toolbarFinishActivity?.setNavigationOnClickListener {
-            onBackPressed()
-        }
-        binding?.btnFinish?.setOnClickListener {
+        setContentView(binding.root)
+
+        supportActionBar?.hide()
+
+        binding.btnFinish.setOnClickListener {
             finish()
         }
 

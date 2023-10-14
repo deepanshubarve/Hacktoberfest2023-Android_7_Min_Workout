@@ -1,4 +1,4 @@
-package dev.panwar.a7minutesworkout
+package dev.panwar.a7minutesworkout.data
 
 import androidx.room.Dao
 import androidx.room.Insert

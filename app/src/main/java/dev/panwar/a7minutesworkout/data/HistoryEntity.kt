@@ -1,4 +1,4 @@
-package dev.panwar.a7minutesworkout
+package dev.panwar.a7minutesworkout.data
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
@@ -9,5 +9,5 @@ import androidx.room.PrimaryKey
  * */
 @Entity(tableName = "history-table")
 data class HistoryEntity(
-    @PrimaryKey
-    val date:String)
+    @PrimaryKey val date: String
+)

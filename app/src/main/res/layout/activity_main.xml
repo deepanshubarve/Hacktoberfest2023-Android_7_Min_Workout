@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     android:background="@drawable/img"
     android:padding="@dimen/main_Screen_main_layout_padding"
-    tools:context=".MainActivity">
+    tools:context=".activities.MainActivity">
 
 
     <FrameLayout
@@ -35,25 +35,24 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:fontFamily="serif-monospace"
         android:text="Welcome!"
         android:textColor="#FFFFFF"
         android:textSize="35sp"
-        android:fontFamily="serif-monospace"
         android:textStyle="bold"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-         />
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="56dp"
+        android:fontFamily="cursive"
         android:text="Start Your 7 Mins Workout"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
-        android:fontFamily="cursive"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -88,10 +87,9 @@
         android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/flBMI"
         app:layout_constraintEnd_toEndOf="@id/flBMI"
         app:layout_constraintStart_toStartOf="@id/flBMI"
-         />
+        app:layout_constraintTop_toBottomOf="@id/flBMI" />
 
     <FrameLayout
         android:id="@+id/flHistory"
@@ -108,8 +106,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:layout_gravity="center"
-            android:src="@drawable/calendar"
-            />
+            android:src="@drawable/calendar" />
     </FrameLayout>
 
     <TextView
@@ -119,9 +116,18 @@
         android:textColor="@color/white"
         android:textSize="22sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/flHistory"
         app:layout_constraintEnd_toEndOf="@id/flHistory"
         app:layout_constraintStart_toStartOf="@id/flHistory"
-        />
+        app:layout_constraintTop_toBottomOf="@id/flHistory" />
+
+    <androidx.appcompat.widget.SwitchCompat
+        android:id="@+id/themeSwitch"
+        android:layout_width="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:thumb="@drawable/thumb"
+        app:track="@drawable/track"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
