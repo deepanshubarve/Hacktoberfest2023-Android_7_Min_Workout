@@ -15,14 +15,14 @@
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/teal_700"
         android:requiresFadingEdge="vertical"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp">
+        app:contentInsetLeft="@dimen/zero_dp"
+        app:contentInsetStart="@dimen/zero_dp">
 
         <ImageButton
             android:id="@+id/goBack"
             android:layout_width="?attr/actionBarSize"
             android:layout_height="?attr/actionBarSize"
-            android:layout_marginStart="2sp"
+            android:layout_marginStart="@dimen/two_sp"
             android:background="@color/teal_700"
             android:src="@drawable/ic_back_24" />
 
@@ -30,9 +30,9 @@
             android:id="@+id/toolbarText"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="20sp"
+            android:layout_marginStart="20dp"
             android:text="Start Exercise"
-            android:textSize="20sp" />
+            android:textSize="@dimen/twenty_sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -41,7 +41,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="GET READY FOR"
-        android:textSize="22sp"
+        android:textSize="@dimen/twenty_two_sp"
         android:textStyle="bold"
         android:textColor="@color/colorAccent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -52,22 +52,20 @@
 <!--   frame used to build custom layout -->
     <FrameLayout
         android:id="@+id/flRestView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="@dimen/hundred_dp"
+        android:layout_height="@dimen/hundred_dp"
+        android:layout_marginTop="@dimen/ten_dp"
         android:background="@drawable/item_circular_color_accent_border_timer"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/toolbarExercise"
-
-        >
+        app:layout_constraintTop_toBottomOf="@id/toolbarExercise">
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/hundred_dp"
+            android:layout_height="@dimen/hundred_dp"
             android:progress="100"
             android:max="10"
             android:layout_gravity="center"
@@ -80,8 +78,8 @@
 <!--        indeterminate false means we know when will timer end....true means we don't know-->
 <!--        -90 to start start progress bar from position of 12 on watch...by default it start from position of number 3 on watch-->
            <LinearLayout
-               android:layout_width="60dp"
-               android:layout_height="60dp"
+               android:layout_width="@dimen/sixty_dp"
+               android:layout_height="@dimen/sixty_dp"
                android:layout_gravity="center"
                android:background="@drawable/item_circular_color_accent_background"
                android:gravity="center"
@@ -92,7 +90,7 @@
                    android:layout_width="wrap_content"
                    android:layout_height="wrap_content"
                    android:textColor="#FFFFFF"
-                   android:textSize="25sp"
+                   android:textSize="@dimen/twenty_five_sp"
                    android:textStyle="bold"
                    tools:text="10"
                    />
@@ -104,7 +102,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Upcoming Exercise:"
-        android:textSize="16sp"
+        android:textSize="@dimen/sixteen_sp"
         android:textColor="@color/black"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -117,7 +115,7 @@
         android:id="@+id/tvNextExercise"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="@dimen/twenty_two_sp"
         android:textColor="@color/black"
         tools:text="ExerciseName"
         android:textStyle="bold"
@@ -135,7 +133,7 @@ and in exercise view we want to show...for this currently this is invisible...bu
     <ImageView
         android:id="@+id/ivImage"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="@dimen/zero_dp"
         android:scaleType="fitXY"
         android:src="@drawable/ic_jumping_jacks"
         android:visibility="invisible"
@@ -149,7 +147,7 @@ and in exercise view we want to show...for this currently this is invisible...bu
         android:layout_height="wrap_content"
         android:text="Exercise Name"
         android:textColor="@color/colorAccent"
-        android:textSize="22sp"
+        android:textSize="@dimen/twenty_two_sp"
         android:textStyle="bold"
         android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
@@ -161,9 +159,9 @@ and in exercise view we want to show...for this currently this is invisible...bu
 <!--    tools:visibility means will be visible in design view....android:visibility means will be visible in application-->
     <FrameLayout
         android:id="@+id/flExerciseView"
-        android:layout_width="100dp"
-        android:layout_height="100dp"
-        android:layout_marginTop="10dp"
+        android:layout_width="@dimen/hundred_dp"
+        android:layout_height="@dimen/hundred_dp"
+        android:layout_marginTop="@dimen/ten_dp"
         tools:visibility="visible"
         android:visibility="gone"
         android:background="@drawable/item_circular_color_accent_border_timer"
@@ -177,8 +175,8 @@ and in exercise view we want to show...for this currently this is invisible...bu
         <ProgressBar
             android:id="@+id/progressBarExercise"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
+            android:layout_width="@dimen/hundred_dp"
+            android:layout_height="@dimen/hundred_dp"
             android:progress="300"
             android:max="30"
             android:layout_gravity="center"
@@ -191,8 +189,8 @@ and in exercise view we want to show...for this currently this is invisible...bu
         <!--        indeterminate false means we know when will timer end....true means we don't know-->
         <!--        -90 to start start progress bar from position of 12 on watch...by default it start from position of number 3 on watch-->
         <LinearLayout
-            android:layout_width="60dp"
-            android:layout_height="60dp"
+            android:layout_width="@dimen/sixty_dp"
+            android:layout_height="@dimen/sixty_dp"
             android:layout_gravity="center"
             android:background="@drawable/item_circular_color_accent_background"
             android:gravity="center"
@@ -203,7 +201,7 @@ and in exercise view we want to show...for this currently this is invisible...bu
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="#FFFFFF"
-                android:textSize="25sp"
+                android:textSize="@dimen/twenty_five_sp"
                 android:textStyle="bold"
                 tools:text="30"
                 />
@@ -223,7 +221,7 @@ and in exercise view we want to show...for this currently this is invisible...bu
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@id/flExerciseView"
         app:layout_constraintBottom_toBottomOf="parent"
-        android:layout_margin="5dp" />
+        android:layout_margin="@dimen/five_dp" />
     <!--END-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

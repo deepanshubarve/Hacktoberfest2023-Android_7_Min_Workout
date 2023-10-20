@@ -35,9 +35,9 @@
         <!-- no use of width as we are using weight which will auto adjust width-->
         <Button
             android:id="@+id/tvYes"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginEnd="10dp"
+            android:layout_width="@dimens/zero_dp"
+            android:layout_height="@dimens/forty_eight_dp"
+            android:layout_marginEnd="@dimens/ten_dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
             android:gravity="center"
@@ -47,15 +47,15 @@
 
         <Button
             android:id="@+id/tvNo"
-            android:layout_width="0dp"
-            android:layout_height="48dp"
-            android:layout_marginStart="10dp"
+            android:layout_width="@dimens/zero_dp"
+            android:layout_height="@dimens/forty_eight_dp"
+            android:layout_marginStart="@dimens/ten_dp"
             android:layout_weight="1"
             android:backgroundTint="@color/colorAccent"
             android:gravity="center"
             android:text="NO"
             android:textColor="#FFFFFF"
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp" />
 
 
     </LinearLayout>
