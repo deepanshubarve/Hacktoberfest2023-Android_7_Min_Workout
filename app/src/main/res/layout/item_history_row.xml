@@ -7,7 +7,7 @@
     android:layout_height="wrap_content"
     android:background="#EBEBEB"
     android:orientation="horizontal"
-    android:padding="15dp">
+    android:padding="@dimens/fifteen_dp">
 
     <TextView
         android:id="@+id/tvPosition"
@@ -15,7 +15,7 @@
         android:layout_height="wrap_content"
         android:gravity="center"
         android:textColor="#212121"
-        android:textSize="16sp"
+        android:textSize="@dimens/sixteen_sp"
         android:textStyle="bold"
         tools:text="1" />
 

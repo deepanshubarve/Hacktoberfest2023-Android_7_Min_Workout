@@ -13,14 +13,14 @@
         android:layout_height="?android:attr/actionBarSize"
         android:background="@color/teal_700"
         android:requiresFadingEdge="vertical"
-        app:contentInsetLeft="0dp"
-        app:contentInsetStart="0dp">
+        app:contentInsetLeft="@dimens/zero_dp"
+        app:contentInsetStart="@dimens/zero_dp">
 
         <ImageButton
             android:id="@+id/goBack"
             android:layout_width="?attr/actionBarSize"
             android:layout_height="?attr/actionBarSize"
-            android:layout_marginStart="2sp"
+            android:layout_marginStart="@dimens/two_sp"
             android:background="@color/teal_700"
             android:src="@drawable/ic_back_24" />
 
@@ -30,7 +30,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="20sp"
             android:text="Calculate BMI"
-            android:textSize="20sp" />
+            android:textSize="@dimens/twenty_sp" />
 
     </androidx.appcompat.widget.Toolbar>
 
@@ -42,15 +42,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/toolbar_bmi_activity"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimens/ten_dp"
         android:background="@drawable/drawable_radio_group_tab_background"
         android:orientation="horizontal">
         <!--no need to give width when weight parameter is used-->
         <!--        checked true means this button is selected initially-->
         <RadioButton
             android:id="@+id/rbMetricUnits"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_width="@dimens/zero_dp"
+            android:layout_height="@dimens/thirty_five_dp"
             android:layout_weight="0.50"
             android:background="@drawable/drawable_units_tab_selector"
             android:button="@null"
@@ -58,13 +58,13 @@
             android:gravity="center"
             android:text="METRIC UNITS"
             android:textColor="@drawable/drawable_units_tab_text_color_selector"
-            android:textSize="16sp"
+            android:textSize="@dimens/sixteen_sp"
             android:textStyle="bold" />
 
         <RadioButton
             android:id="@+id/rbUsUnits"
-            android:layout_width="0dp"
-            android:layout_height="35dp"
+            android:layout_width="@dimens/zero_dp"
+            android:layout_height="@dimens/thirty_five_dp"
             android:layout_weight="0.50"
             android:background="@drawable/drawable_units_tab_selector"
             android:button="@null"
@@ -72,7 +72,7 @@
             android:gravity="center"
             android:text="US UNITS"
             android:textColor="@drawable/drawable_units_tab_text_color_selector"
-            android:textSize="16sp"
+            android:textSize="@dimens/sixteen_sp"
             android:textStyle="bold" />
     </RadioGroup>
 
@@ -83,7 +83,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rgUnits"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimens/ten_dp"
         app:boxStrokeColor="@color/colorAccent"
         app:hintTextColor="@color/colorAccent">
         <!--input inside box-->
@@ -93,7 +93,7 @@
             android:layout_height="wrap_content"
             android:hint="WEIGHT (in kg)"
             android:inputType="numberDecimal"
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp"/>
     </com.google.android.material.textfield.TextInputLayout>
     <!--positioned below tilMetricUnitWeight-->
     <com.google.android.material.textfield.TextInputLayout
@@ -102,7 +102,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tilMetricUnitWeight"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimens/ten_dp"
         app:boxStrokeColor="@color/colorAccent"
         app:hintTextColor="@color/colorAccent">
 
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:hint="HEIGHT (in cm)"
             android:inputType="numberDecimal"
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--US unit weight-->
@@ -123,7 +123,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/rgUnits"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimens/ten_dp"
         app:boxStrokeColor="@color/colorAccent"
         app:hintTextColor="@color/colorAccent">
 
@@ -134,7 +134,7 @@
             android:textCursorDrawable="@color/purple_700"
             android:hint="WEIGHT (in pounds)"
             android:inputType="numberDecimal"
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <!--todo add us unit views-->
@@ -145,8 +145,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tilMetricUnitWeight"
         android:layout_alignParentStart="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_margin="@dimens/ten_dp"
+        android:layout_marginTop="@dimens/ten_dp"
         android:layout_toStartOf="@id/view"
         android:visibility="gone"
         app:boxStrokeColor="@color/colorAccent"
@@ -160,13 +160,13 @@
             android:layout_height="wrap_content"
             android:hint="Feet"
             android:inputType="numberDecimal"
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <View
         android:id="@+id/view"
-        android:layout_width="0dp"
-        android:layout_height="1dp"
+        android:layout_width="@dimens/zero_dp"
+        android:layout_height="@dimens/zero_dp"
         android:layout_below="@+id/tilMetricUnitWeight"
         android:layout_centerHorizontal="true" />
 
@@ -177,8 +177,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/tilMetricUnitWeight"
         android:layout_alignParentEnd="true"
-        android:layout_margin="10dp"
-        android:layout_marginTop="10dp"
+        android:layout_margin="@dimens/ten_dp"
+        android:layout_marginTop="@dimens/ten_dp"
         android:layout_toEndOf="@id/view"
         android:visibility="gone"
         app:boxStrokeColor="@color/colorAccent"
@@ -192,7 +192,7 @@
             android:layout_height="wrap_content"
             android:hint="Inch"
             android:inputType="numberDecimal"
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp" />
     </com.google.android.material.textfield.TextInputLayout>
     <!--end-->
 
@@ -202,9 +202,9 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/tilMetricUnitHeight"
-        android:layout_marginTop="25dp"
+        android:layout_marginTop="@dimens/twenty_five_dp"
         android:orientation="vertical"
-        android:padding="10dp"
+        android:padding="@dimens/ten_dp"
         android:visibility="invisible"
         tools:visibility="visible">
 
@@ -215,15 +215,15 @@
             android:gravity="center"
             android:text="YOUR BMI"
             android:textAllCaps="true"
-            android:textSize="16sp" />
+            android:textSize="@dimens/sixteen_sp" />
 
         <TextView
             android:id="@+id/tvBMIValue"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimens/five_dp"
             android:gravity="center"
-            android:textSize="18sp"
+            android:textSize="@dimens/eighteen_sp"
             android:textStyle="bold"
             tools:text="15.00" />
 
@@ -231,18 +231,18 @@
             android:id="@+id/tvBMIType"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimens/five_dp"
             android:gravity="center"
-            android:textSize="18sp"
+            android:textSize="@dimens/eighteen_sp"
             tools:text="Normal" />
 
         <TextView
             android:id="@+id/tvBMIDescription"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="@dimens/five_dp"
             android:gravity="center"
-            android:textSize="18sp"
+            android:textSize="@dimens/eighteen_sp"
             tools:text="Normal" />
 
     </LinearLayout>
@@ -254,19 +254,19 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/llDiplayBMIResult"
         android:layout_gravity="bottom"
-        android:layout_margin="10dp"
-        android:layout_marginTop="35dp"
+        android:layout_margin="@dimens/ten_dp"
+        android:layout_marginTop="@dimens/thirty_five_dp"
         android:backgroundTint="@color/colorAccent"
         android:text="CALCULATE"
         android:textColor="#FFFFFF"
-        android:textSize="18sp" />
+        android:textSize="@dimens/eighteen_sp" />
 
     <ImageView
         android:id="@+id/iv_scale"
         android:layout_width="match_parent"
-        android:layout_height="256dp"
+        android:layout_height="@dimens/two_hundred_fifty_six_dp"
         android:layout_below="@id/llDiplayBMIResult"
-        android:layout_marginTop="57dp"
+        android:layout_marginTop="dimens/fifty_seven_dp"
         android:background="@drawable/img_1"
         android:visibility="invisible"
         tools:visibility="visible" />

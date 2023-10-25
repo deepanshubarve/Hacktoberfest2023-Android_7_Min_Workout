@@ -12,8 +12,8 @@
 
     <FrameLayout
         android:id="@+id/flStart"
-        android:layout_width="150dp"
-        android:layout_height="150dp"
+        android:layout_width="@dimen/hundred_fifty_dp"
+        android:layout_height="@dimen/hundred_fifty_dp"
         android:background="@drawable/item_color_accent_ripple_background"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
         android:fontFamily="serif-monospace"
         android:text="Welcome!"
         android:textColor="#FFFFFF"
-        android:textSize="35sp"
+        android:textSize="@dimen/thirty_five_sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -48,11 +48,11 @@
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="@dimen/fifty_six_dp"
         android:fontFamily="cursive"
         android:text="Start Your 7 Mins Workout"
         android:textColor="#FFFFFF"
-        android:textSize="30sp"
+        android:textSize="@dimen/thirty_sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.494"
@@ -61,9 +61,9 @@
 
     <FrameLayout
         android:id="@+id/flBMI"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginEnd="40dp"
+        android:layout_width="@dimen/seventy_dp"
+        android:layout_height="@dimen/seventy_dp"
+        android:layout_marginEnd="@dimen/forty_dp"
         android:layout_marginBottom="524dp"
         android:background="@drawable/item_circular_color_accent_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -85,7 +85,7 @@
         android:layout_height="wrap_content"
         android:text="Calculator"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="@dimen/twenty_two_sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/flBMI"
         app:layout_constraintStart_toStartOf="@id/flBMI"
@@ -93,9 +93,9 @@
 
     <FrameLayout
         android:id="@+id/flHistory"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:layout_marginStart="40dp"
+        android:layout_width="@dimen/seventy_dp"
+        android:layout_height="@dimen/seventy_dp"
+        android:layout_marginStart="@dimen/forty_dp"
         android:layout_marginBottom="524dp"
         android:background="@drawable/item_circular_color_accent_background"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -103,8 +103,8 @@
 
 
         <ImageView
-            android:layout_width="40dp"
-            android:layout_height="40dp"
+            android:layout_width="@dimen/forty_dp"
+            android:layout_height="@dimen/forty_dp"
             android:layout_gravity="center"
             android:src="@drawable/calendar" />
     </FrameLayout>
@@ -114,7 +114,7 @@
         android:layout_height="wrap_content"
         android:text="History"
         android:textColor="@color/white"
-        android:textSize="22sp"
+        android:textSize="@dimen/twenty_two_sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@id/flHistory"
         app:layout_constraintStart_toStartOf="@id/flHistory"
@@ -127,7 +127,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         android:thumb="@drawable/thumb"
         app:track="@drawable/track"
-        android:layout_margin="10dp"
+        android:layout_margin="@dimen/ten_dp"
         android:layout_height="wrap_content"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
